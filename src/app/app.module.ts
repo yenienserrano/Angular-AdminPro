@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
 import { PagesModule } from './pages/pages.module';
 import { AuthModule } from './auth/auth.module';
 
@@ -20,7 +21,8 @@ import { NotpagesfoundComponent } from './notpagesfound/notpagesfound.component'
     BrowserModule,
     AppRoutingModule,
     PagesModule,
-    AuthModule
+    AuthModule,
+    RouterModule
   ],
   bootstrap: [AppComponent]
 })

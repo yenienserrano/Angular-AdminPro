@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AccountSettingComponent } from './account-setting/account-setting.component';
 
 
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -15,6 +16,7 @@ export const routes: Routes = [
           { path: '', component: DashboardComponent },
           { path: 'progress', component: ProgressComponent },
           { path: 'grafica1', component: Grafica1Component},
+          { path: 'account-setting', component: AccountSettingComponent},
         ]
       },
 ]

@@ -13,4 +13,9 @@
     display: flex;
     justify-content: center;
     text-align: center;
-}   
+}
+
+.img-avatar{
+    max-height: 200px;
+    width: 200px;
+}

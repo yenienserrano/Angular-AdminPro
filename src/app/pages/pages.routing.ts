@@ -6,6 +6,7 @@ import { AccountSettingComponent } from './account-setting/account-setting.compo
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Grafica1Component } from './grafica1/grafica1.component';
+import { UsuariosComponent } from './mantenimiento/usuarios/usuarios.component';
 import { PagesComponent } from './pages.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { ProgressComponent } from './progress/progress.component';
@@ -25,6 +26,9 @@ export const routes: Routes = [
           { path: 'account-setting', component: AccountSettingComponent, data:{titulo: 'Themas'}},
           { path: 'promesas', component: PromesasComponent, data:{titulo: 'Promesas'}},
           { path: 'rxjs', component: RxjsComponent, data:{titulo: 'RxJs'}},
+
+          //Mantenimiento
+          { path: 'usuarios', component: UsuariosComponent, data:{titulo: 'Usuarios'}},
         ]
       },
 ]

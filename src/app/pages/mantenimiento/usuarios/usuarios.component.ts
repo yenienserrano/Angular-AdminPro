@@ -39,7 +39,7 @@ export class UsuariosComponent implements OnInit, OnDestroy {
 
     this.imgSubs = this.modalImagenService.nuevaImagen
       .pipe(
-        delay(100)
+        delay(300)
       )
       .subscribe( img => this.cargarUsuarios())
   }
@@ -74,7 +74,7 @@ export class UsuariosComponent implements OnInit, OnDestroy {
     }
     
     this.buscarService.buscar( "usuarios", texto )
-      .subscribe( resp => {
+      .subscribe( (resp: Usuario[]) => {
 
         this.usuarios = resp
       })

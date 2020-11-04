@@ -29,6 +29,10 @@ get token(){
     return localStorage.getItem('token') || ''    
 }
 
+get role(): 'ADMIN_ROLE' | 'USER_ROLE'{
+  return this.usuario.role
+}
+
 get uid(){
   return this.usuario._id
 }
@@ -40,6 +44,11 @@ get headers(){
     }
   }
 }
+
+  saveLocalStorage( token: string, menu: any ){
+    localStorage.setItem('token', token)
+    localStorage.setItem('menu', JSON.stringify( menu ) )
+  }
 
   googleInit() {
 
@@ -58,6 +67,7 @@ get headers(){
 
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('menu');
 
     this.auth2.signOut().then(() => {
       this.ngZone.run(() => {
@@ -79,7 +89,7 @@ get headers(){
         const { email, google, nombre, role, _id, img } = resp.usuario
 
         this.usuario = new Usuario( email, nombre, "", img, google, role, _id )
-        localStorage.setItem('token', resp.token)
+        this.saveLocalStorage( resp.token, resp.menu )
         return true
       }),
       catchError( error => of(false))
@@ -90,7 +100,7 @@ get headers(){
     return this.http.post(`${base_url}/usuarios`, formData)
                       .pipe(
                         tap( (resp: any) => {
-                          localStorage.setItem('token', resp.token)
+                          this.saveLocalStorage( resp.token, resp.menu )
                         })
                       )
   }
@@ -109,7 +119,7 @@ get headers(){
     return this.http.post(`${base_url}/auth`, formData)
                       .pipe(
                         tap( (resp: any) => {
-                          localStorage.setItem('token', resp.token)
+                          this.saveLocalStorage( resp.token, resp.menu )
                         })
                       )
   }
@@ -118,7 +128,7 @@ get headers(){
     return this.http.post(`${base_url}/auth/google`, { token })
                       .pipe(
                         tap( (resp: any) => {
-                          localStorage.setItem('token', resp.token)
+                          this.saveLocalStorage( resp.token, resp.menu )
                         })
                       )
   }

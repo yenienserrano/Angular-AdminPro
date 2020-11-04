@@ -14,7 +14,7 @@ export class SidebarComponent implements OnInit {
   public itemMenu
   public usuario: Usuario
 
-  constructor( private sidebarService: SidebarService,
+  constructor( public sidebarService: SidebarService,
                private usuarioService: UsuariosService ) {
     this.itemMenu = sidebarService.menu
     this.usuario  = usuarioService.usuario

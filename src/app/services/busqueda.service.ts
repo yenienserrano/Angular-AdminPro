@@ -44,6 +44,12 @@ private transformarMedicos( respuesta: any[] ): Medicos[] {
   return respuesta
 }
 
+  BusquedaGlobal( termino: string ) {
+    const url = `${ base_url}/todo/${ termino }`
+
+    return this.http.get( url, this.headers )
+  }
+
   buscar( tipo: "usuarios"|"medicos"|"hospitales", texto: string ){
     const url = `${ base_url}/todo/coleccion/${ tipo }/${ texto }`
 

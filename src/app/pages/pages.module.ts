@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router'
 
 import { SharedModule } from '../shared/shared.module';
 import { ComponentsModule } from '../components/components.module';
+import { PipesModule } from '../pipes/pipes.module';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
@@ -18,9 +19,8 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { UsuariosComponent } from './mantenimiento/usuarios/usuarios.component';
 import { HospitalesComponent } from './mantenimiento/hospitales/hospitales.component';
 import { MedicosComponent } from './mantenimiento/medicos/medicos.component';
-import { ImagenPipe } from '../pipes/imagen.pipe';
-import { PipesModule } from '../pipes/pipes.module';
 import { MedicoComponent } from './mantenimiento/medicos/medico.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
 
 
 
@@ -37,7 +37,8 @@ import { MedicoComponent } from './mantenimiento/medicos/medico.component';
     UsuariosComponent,
     HospitalesComponent,
     MedicosComponent,
-    MedicoComponent
+    MedicoComponent,
+    BusquedaComponent
   ],
   exports: [
     DashboardComponent,
